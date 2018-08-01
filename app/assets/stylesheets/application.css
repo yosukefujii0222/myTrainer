@@ -19,6 +19,34 @@ a {
 }
 /* CSSリセットここまで */
 
+/* ヘッダー部分のレイアウト */
+header{
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+.header-left{
+  float: left;
+}
+
+.header-left p{
+  color: white;
+  font-size: 25px;
+  line-height: 65px;
+}
+
+.header-right{
+  float: right;
+}
+
+.header-right a{
+  color: white;
+  font-size: 17px;
+  line-height: 65px;
+}
+/* ヘッダー部分ここまで*/
+
 /* トップ部分のレイアウト */
 .top-wrapper{
   background-image: url('top-background.jpg');
