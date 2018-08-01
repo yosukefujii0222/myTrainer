@@ -18,3 +18,41 @@ a {
   text-decoration: none;
 }
 /* CSSリセットここまで */
+
+/* トップ部分のレイアウト */
+.top-wrapper{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 180px 0 100px 0;
+}
+
+.container{
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.catch-copy{
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.9;
+}
+
+.service-description{
+  color: black;
+  opacity: 0.9;
+}
+
+.btn{
+  display: inline-block;
+  padding: 8px 24px;
+  color: white;
+  border-radius: 5px;
+}
+
+.signup{
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-top: 30px;
+}
