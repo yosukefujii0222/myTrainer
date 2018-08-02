@@ -37,13 +37,14 @@ header{
 }
 
 .header-right{
-  float: right;
+
 }
 
 .header-right a{
   color: white;
   font-size: 17px;
   line-height: 65px;
+  margin-right: 30px;
 }
 /* ヘッダー部分ここまで*/
 
