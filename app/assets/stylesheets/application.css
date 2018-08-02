@@ -23,7 +23,9 @@ a {
 header{
   height: 65px;
   width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
+  background-color: rgba(209, 232, 41, 0.8);
+  position: fixed;
+  z-index: 10;
 }
 
 .header-left{
@@ -31,9 +33,10 @@ header{
 }
 
 .header-left p{
-  color: white;
+  color: black;
   font-size: 25px;
   line-height: 65px;
+  font-weight: bold;
 }
 
 .header-right{
@@ -41,10 +44,14 @@ header{
 }
 
 .header-right a{
-  color: white;
+  color: gray;
   font-size: 17px;
   line-height: 65px;
   margin-right: 30px;
+}
+
+.header-right a:hover{
+  color: black;
 }
 /* ヘッダー部分ここまで*/
 
@@ -78,6 +85,10 @@ header{
   padding: 8px 24px;
   color: white;
   border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 1;
 }
 
 .signup{
@@ -115,3 +126,26 @@ header{
 }
 
 /* ボトム部分ここまで */
+
+/* フッター部分 */
+footer{
+  height: 65px;
+  background-color: rgba(209, 232, 41, 0.8);
+}
+
+.footer-left{
+  text-align: left
+}
+
+.footer-left p{
+  color: black;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.footer-left span{
+  color: gray;
+  font-size: 10px;
+}
+
+/* フッター部分ここまで */
