@@ -55,7 +55,7 @@ header{
 }
 /* ヘッダー部分ここまで*/
 
-/* ボトム部分のレイアウト */
+/* トップ部分のレイアウト */
 .top-wrapper{
   background-image: url('top-background.jpg');
   background-size: cover;
@@ -78,6 +78,7 @@ header{
 .service-description{
   color: black;
   opacity: 0.9;
+  font-weight: bold;
 }
 
 .btn{
@@ -96,7 +97,9 @@ header{
   opacity: 0.8;
   margin-top: 30px;
 }
+/* トップ部分ここまで */
 
+/* ボトム部分のレイアウト */
 .bottom-wrapper{
   background-color: #555555;
 }
@@ -125,6 +128,22 @@ header{
   border-bottom: 1px solid black;
 }
 
+.functions{
+  margin: 30px 0;
+  border: 1px solid black;
+}
+
+.function-title{
+  text-align: left;
+  padding: 10px 10px;
+}
+
+.message{
+}
+
+.message p{
+  color: white;
+}
 /* ボトム部分ここまで */
 
 /* フッター部分 */
@@ -148,4 +167,7 @@ footer{
   font-size: 10px;
 }
 
+.message .btn {
+  margin-bottom: 50px;
+}
 /* フッター部分ここまで */
