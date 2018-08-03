@@ -1,15 +1,173 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* CSSリセット */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* CSSリセットここまで */
+
+/* ヘッダー部分のレイアウト */
+header{
+  height: 65px;
+  width: 100%;
+  background-color: rgba(209, 232, 41, 0.8);
+  position: fixed;
+  z-index: 10;
+}
+
+.header-left{
+  float: left;
+}
+
+.header-left p{
+  color: black;
+  font-size: 25px;
+  line-height: 65px;
+  font-weight: bold;
+}
+
+.header-right{
+
+}
+
+.header-right a{
+  color: gray;
+  font-size: 17px;
+  line-height: 65px;
+  margin-right: 30px;
+}
+
+.header-right a:hover{
+  color: black;
+}
+/* ヘッダー部分ここまで*/
+
+/* トップ部分のレイアウト */
+.top-wrapper{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 180px 0 100px 0;
+}
+
+.container{
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.catch-copy{
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.9;
+}
+
+.service-description{
+  color: black;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.btn{
+  display: inline-block;
+  padding: 8px 24px;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.signup{
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-top: 30px;
+}
+/* トップ部分ここまで */
+
+/* ボトム部分のレイアウト */
+.bottom-wrapper{
+  background-color: #555555;
+}
+
+.description{
+  display: inline-block;
+  padding: 20px;
+  background-color: white;
+  border-radius: 7px;
+  margin: 30px 0;
+  width: 40%;
+}
+
+.description h2{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.fa-arrow-down{
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+.solution{
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+
+.functions{
+  margin: 30px 0;
+  border: 1px solid black;
+}
+
+.function-title{
+  text-align: left;
+  padding: 10px 10px;
+}
+
+.message{
+}
+
+.message p{
+  color: white;
+}
+/* ボトム部分ここまで */
+
+/* フッター部分 */
+footer{
+  height: 65px;
+  background-color: rgba(209, 232, 41, 0.8);
+}
+
+.footer-left{
+  text-align: left
+}
+
+.footer-left p{
+  color: black;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.footer-left span{
+  color: gray;
+  font-size: 10px;
+}
+
+.message .btn {
+  margin-bottom: 50px;
+}
+/* フッター部分ここまで */
