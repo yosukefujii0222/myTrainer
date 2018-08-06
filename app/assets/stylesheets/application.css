@@ -19,6 +19,21 @@ a {
 }
 /* CSSリセットここまで */
 
+/* フラッシュ */
+.flash{
+  padding: 10px 0;
+  color: white;
+  background: rgb(251, 170, 88);
+  text-align: center;
+  position: absolute;
+  top: 64px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 14px;
+}
+/* フラッシュここまで */
+
 /* ヘッダー部分のレイアウト */
 header{
   height: 65px;
@@ -171,3 +186,62 @@ footer{
   margin-bottom: 50px;
 }
 /* フッター部分ここまで */
+
+
+/* ------------------ユーザー登録ページ----------------- */
+
+/* トレーナー登録ここから */
+.trainer-new{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  height: 100%;
+  padding: 40px 0;
+}
+.register-form{
+  background-color: rgba(209, 232, 41, 0.8);
+  max-width: 600px;
+  text-align: left;
+  border-radius: 10px;
+  padding: 40px 40px;
+  margin: 40px 0;
+}
+
+.register-form p{
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.register-form input{
+  width: 100%;
+  padding: 10px 0;
+
+}
+
+.register-form .checkbox{
+  width: 15px;
+}
+
+.register-form textarea{
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.register{
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-top: 30px;
+}
+
+.form-error{
+  color: red;
+}
+/* トレーナー登録ここまで */
+
+/* ユーザー登録ここから */
+.user-new{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  height: 100%;
+  padding: 40px 0;
+}
