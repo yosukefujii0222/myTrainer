@@ -1,5 +1,6 @@
 class TrainerController < ApplicationController
   def new
+    @trainer = Trainer.new
   end
 
   def create
@@ -19,7 +20,11 @@ class TrainerController < ApplicationController
       imageData = params[:image]
       File.binwrite("public/trainer_images/#{@trainer.image}", imageData.read)
     end
-    @trainer.save
-    redirect_to("/")
+    if @trainer.save
+      flash[:notice] = "トレーナー登録が完了しました！"
+      redirect_to("/")
+    else
+      render("/trainer/new")
+    end
   end
 end

@@ -3,15 +3,22 @@
     <div class="register-form">
       <h2>新規トレーナー登録</h2>
 
+      <!-- 登録失敗した時のエラーメッセージ -->
+      <% @trainer.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+
       <%= form_tag("/trainer/create", {multipart: true}) do %>
         <p>トレーナー名</p>
-        <input name="name" value="">
+        <input name="name" value="<%= @trainer.name %>">
         <p>プロフィール画像</p>
         <input name=“image” type="file">
         <p>メールアドレス</p>
-        <input name="email" value="">
+        <input name="email" value="<%= @trainer.email %>">
         <p>パスワード</p>
-        <input name="password" value="">
+        <input name="password" value="<%= @trainer.password %>">
         <p>得意分野</p>
         <input class="checkbox" type="checkbox" name="speciality" value="meal">食事管理<br />
         <input class="checkbox" type="checkbox" name="speciality" value="workout">筋トレ指導<br />
@@ -21,11 +28,11 @@
           <option value="w">女性</option>
         </select>
         <p>身長</p>
-        <input name="height" value="">
+        <input name="height" value="<%= @trainer.height %>">
         <p>体重</p>
-        <input name="weight" value="">
+        <input name="weight" value="<%= @trainer.weight %>">
         <p>年齢</p>
-        <input name="age" value="">
+        <input name="age" value="<%= @trainer.age %>">
 
         <p class="register-caution">
           下記の質問は任意で回答してください。
@@ -33,7 +40,7 @@
           フォロワーとの引き合いを増やすために情報を入力しましょう。
         </p>
         <p>経歴</p>
-        <textarea name="career" value="">あなたがこれまでトレーナーとして得た実績などを自由にアピールしてください。
+        <textarea name="career" value="<%= @trainer.career %>">あなたがこれまでトレーナーとして得た実績などを自由にアピールしてください。
         </textarea>
 
         <input class="btn register" type="submit" value=新規登録>
