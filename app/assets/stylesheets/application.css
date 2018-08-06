@@ -171,3 +171,39 @@ footer{
   margin-bottom: 50px;
 }
 /* フッター部分ここまで */
+
+
+/* ------------------ユーザー登録ページのcss----------------- */
+.register-form{
+  background-color: rgba(209, 232, 41, 0.8);
+  border-radius: 10px;
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+.register-form p{
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.register-form input{
+  width: 300px;
+  padding: 10px 0;
+}
+
+.register-form .checkbox{
+  width: 15px;
+}
+
+.register-form textarea{
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  padding: 10px 0;
+}
+
+.register{
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-top: 30px;
+}
