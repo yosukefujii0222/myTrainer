@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/new'
+
   get 'trainer/new' => 'trainer#new'
   post 'trainer/create' => 'trainer#create'
   get '/' => 'home#top'
