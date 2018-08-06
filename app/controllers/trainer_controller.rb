@@ -21,6 +21,7 @@ class TrainerController < ApplicationController
       File.binwrite("public/trainer_images/#{@trainer.image}", imageData.read)
     end
     if @trainer.save
+      session[:trainer_id] = @trainer.id
       flash[:notice] = "トレーナー登録が完了しました！"
       redirect_to("/")
     else
