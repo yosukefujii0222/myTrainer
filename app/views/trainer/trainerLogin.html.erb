@@ -1,0 +1,27 @@
+<div class="trainer-new">
+  <div class="container">
+    <div class="register-form">
+      <h2>トレーナーログイン</h2>
+      <span>
+        こちらはトレーナー用のログインページです。<br />
+        一般ユーザーのログインページは<a href="/user/userLogin">コチラ</a>です
+      </span>
+
+      <!-- エラーメッセージ文 -->
+      <% if @error_message %>
+        <div class="form-error">
+          <%= @error_message %>
+        </div>
+      <% end %>
+
+      <%= form_tag("/trainerLogin") do%>
+        <p>メールアドレス</p>
+        <input name="email">
+        <p>パスワード</p>
+        <input name="password" type="password">
+        <input class="btn signup" type="submit" value="ログイン">
+      <% end %>
+
+    </div>
+  </div>
+</div>

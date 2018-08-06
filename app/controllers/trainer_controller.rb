@@ -27,4 +27,25 @@ class TrainerController < ApplicationController
       render("/trainer/new")
     end
   end
+
+  def trainerLogin
+  end
+
+  def login
+    @trainer = Trainer.find_by(
+      email: params[:email],
+      password: params[:password]
+    )
+    if @trainer
+      flash[:notice] = "ログインしました"
+      redirect_to("/")
+    else
+      @error_message = "メールアドレスまたはパスワードが間違っています"
+      @email = params[:email]
+      @password = params[:password]
+      render("trainer/trainerLogin")
+    end
+  end
+
+
 end
