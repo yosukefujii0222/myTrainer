@@ -1,2 +1,43 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+<div class="user-new">
+  <div class="container">
+    <div class="register-form">
+      <h2>新規ユーザー登録</h2>
+
+      <!-- 登録失敗した時のエラーメッセージ -->
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+
+      <%= form_tag("/user/create", {multipart: true}) do %>
+        <p>ユーザー名</p>
+        <input name="name" value="<%= @user.name %>">
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @user.email %>">
+        <p>パスワード</p>
+        <input name="password" value="<%= @user.password %>">
+        <p>理想体重</p>
+        <input name="idealWeight" value="<%= @user.idealWeight %>">
+        <p class="register-caution">
+          下記の質問は任意で回答してください。
+          <br />
+          トレーナーからの適格なアドバイスを受けるためには必要です。
+        </p>
+        <p>性別</p>
+        <select name="gender">
+          <option value="m">男性</option>
+          <option value="w">女性</option>
+        </select>
+        <p>身長</p>
+        <input name="height" value="<%= @user.height %>">
+        <p>体重</p>
+        <input name="weight" value="<%= @user.weight %>">
+        <p>年齢</p>
+        <input name="age" value="<%= @user.age %>">
+        <input class="btn register" type="submit" value=新規登録>
+      <% end %>
+
+    </div>
+  </div>
+</div>

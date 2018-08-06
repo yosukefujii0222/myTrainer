@@ -188,7 +188,9 @@ footer{
 /* フッター部分ここまで */
 
 
-/* ------------------ユーザー登録ページのcss----------------- */
+/* ------------------ユーザー登録ページ----------------- */
+
+/* トレーナー登録ここから */
 .trainer-new{
   background-image: url('top-background.jpg');
   background-size: cover;
@@ -233,4 +235,13 @@ footer{
 
 .form-error{
   color: red;
+}
+/* トレーナー登録ここまで */
+
+/* ユーザー登録ここから */
+.user-new{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  height: 100%;
+  padding: 40px 0;
 }
