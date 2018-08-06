@@ -1,43 +1,42 @@
 <div class="trainer-new">
   <div class="container">
-    <div class="trainer-register-form">
+    <div class="register-form">
       <h2>新規トレーナー登録</h2>
 
       <%= form_tag("/trainer/create", {multipart: true}) do %>
         <p>トレーナー名</p>
         <input name="name" value="">
         <p>プロフィール画像</p>
-        <input name=“image” type=“file”>
+        <input name=“image” type="file">
         <p>メールアドレス</p>
         <input name="email" value="">
         <p>パスワード</p>
         <input name="password" value="">
         <p>得意分野</p>
-        <input type=“checkbox” name=“speciality” value=“meal”>食事管理<br />
-        <input type=“checkbox” name=“speciality” value=“workout”>筋トレ指導<br />
-        <p>性別<p>
-        <select name=“gender”>
-          <option value=“m”>男性</option>
-          <option value=“w”>女性</option>
+        <input class="checkbox" type="checkbox" name="speciality" value="meal">食事管理<br />
+        <input class="checkbox" type="checkbox" name="speciality" value="workout">筋トレ指導<br />
+        <p>性別</p>
+        <select name="gender">
+          <option value="m">男性</option>
+          <option value="w">女性</option>
         </select>
-        <p>身長<p>
-        <input name=“height” value="">
-        <p>体重<p>
-        <input name=“weight” value="">
-        <p>年齢<p>
-        <input name=“age” value="">
+        <p>身長</p>
+        <input name="height" value="">
+        <p>体重</p>
+        <input name="weight" value="">
+        <p>年齢</p>
+        <input name="age" value="">
 
-        <p class=“register-caution”>
+        <p class="register-caution">
           下記の質問は任意で回答してください。
           <br />
           フォロワーとの引き合いを増やすために情報を入力しましょう。
         </p>
-        <p>経歴<p>
-        <textarea name=“career” value="">
-          あなたがこれまでトレーナーとして得た実績などを自由にアピールしてください。
+        <p>経歴</p>
+        <textarea name="career" value="">あなたがこれまでトレーナーとして得た実績などを自由にアピールしてください。
         </textarea>
 
-        <input type="submit" value=“新規登録”>
+        <input class="btn register" type="submit" value=新規登録>
       <% end %>
 
     </div>
