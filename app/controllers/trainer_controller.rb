@@ -37,6 +37,7 @@ class TrainerController < ApplicationController
       password: params[:password]
     )
     if @trainer
+      session[:trainer_id] = @trainer.id
       flash[:notice] = "ログインしました"
       redirect_to("/")
     else
@@ -45,6 +46,12 @@ class TrainerController < ApplicationController
       @password = params[:password]
       render("trainer/trainerLogin")
     end
+  end
+
+  def logout
+    session[:trainer_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/")
   end
 
 

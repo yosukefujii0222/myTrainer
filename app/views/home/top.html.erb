@@ -16,8 +16,22 @@
       <p>マイトレ</p>
     </div>
     <div class="header-right">
-      <a href="#">トレーナーを検索</a>
-      <a href="#" title="">ログイン</a>
+
+      <!-- トレーナーログイン時 -->
+      <% if session[:trainer_id] %>
+        <%= link_to("トレーナー名", "/")%>
+        <%= link_to("他のトレーナーを検索", "/") %>
+        <%= link_to("ログアウト", "trainer/logout", method: :post) %>
+      <!-- ユーザーログイン時 -->
+      <% elsif session[:user_id] %>
+        <%= link_to("ユーザー名", "/")%>
+        <%= link_to("トレーナーを検索", "/") %>
+        <%= link_to("ログアウト", "user/logout", method: :post) %>
+      <!-- ログインしていない状態 -->
+      <% else %>
+        <%= link_to("トレーナーを検索", "/") %>
+        <%= link_to("ログイン", "/") %>
+      <% end %>
     </div>
   </div>
 </header>

@@ -32,6 +32,7 @@ class UserController < ApplicationController
       password: params[:password]
     )
     if @user
+      session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to("/")
     else
@@ -40,6 +41,12 @@ class UserController < ApplicationController
       @password = params[:password]
       render("user/userLogin")
     end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/")
   end
 
 end
