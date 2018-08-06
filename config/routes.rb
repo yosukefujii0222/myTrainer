@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'user/new'
+  get 'user/new' => 'user#new'
+  post 'user/create' => 'user#create'
 
   get 'trainer/new' => 'trainer#new'
   post 'trainer/create' => 'trainer#create'
