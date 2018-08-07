@@ -55,5 +55,9 @@ class TrainerController < ApplicationController
     redirect_to("/")
   end
 
+  def show
+    @trainer = Trainer.find_by(id: params[:id])
+  end
+
 
 end
