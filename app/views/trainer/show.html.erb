@@ -4,7 +4,11 @@
     <div class="trainer-description">
       <div class="trainer-description-left">
         <div class="image-wrapper">
-          <p>ここに画像を表示。</p>
+          <% if @trainer.image %>
+            <image src="<%= "/trainer_images/#{@trainer.image}" %>">
+          <% else %>
+            <p>まだ画像はアップロードされていません。</p>
+          <% end %>
         </div>
       </div>
       <div class="trainer-description-right">

@@ -349,6 +349,13 @@ footer{
   color: white;
 }
 
+.image-wrapper img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+}
+
 .status-wrapper{
   text-align: left;
   font-size: 30px;
