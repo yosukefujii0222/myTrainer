@@ -363,3 +363,12 @@ footer{
 .status span {
   font-size: 20px;
 }
+
+.show-page-btn{
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 20px;
+}
