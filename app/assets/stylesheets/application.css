@@ -34,6 +34,63 @@ a {
 }
 /* フラッシュここまで */
 
+/* 新規登録ボックス */
+.signup-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+
+.modal{
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  width:500px;
+  padding: 20px 20px;
+  background-color: gray;
+  border-radius: 10px;
+  height: auto;
+  text-align: center
+}
+.modal-contents{
+  display: inline-block;
+  background-color: rgba(209, 232, 41, 0.8);
+  width: 40%;
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin: 20px 0;
+}
+
+.modal-contents p {
+  color: gray;
+  font-weight: bold;
+}
+
+.close-modal i {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+
+}
+/* 新規登録ボックスここまで */
+
+/* ログインボックス */
+.login-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+/* ログインボックスここまで */
+
 /* ヘッダー部分のレイアウト */
 header{
   height: 65px;
@@ -65,8 +122,20 @@ header{
   margin-right: 30px;
 }
 
+.header-right span{
+  color: gray;
+  font-size: 17px;
+  line-height: 65px;
+  margin-right: 30px;
+}
+
 .header-right a:hover{
   color: black;
+}
+
+.header-right span:hover{
+  color: black;
+  cursor: pointer;
 }
 /* ヘッダー部分ここまで*/
 
@@ -78,7 +147,7 @@ header{
 }
 
 .container{
-  width: 100%;
+
   padding: 0 15px;
   text-align: center;
 }
