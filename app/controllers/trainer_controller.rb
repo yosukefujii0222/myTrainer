@@ -59,5 +59,33 @@ class TrainerController < ApplicationController
     @trainer = Trainer.find_by(id: params[:id])
   end
 
+  def edit
+    @trainer = Trainer.find_by(id: params[:id])
+  end
+
+  def update
+    @trainer = Trainer.find_by(id: params[:id])
+    @trainer.name = params[:name]
+    @trainer.email = params[:email]
+    @trainer.password = params[:password]
+    @trainer.speciality = params[:speciality]
+    @trainer.gender = params[:gender]
+    @trainer.height = params[:height]
+    @trainer.weight = params[:weight]
+    @trainer.age = params[:age]
+    @trainer.career = params[:career]
+    if params[:image]
+      @trainer.image = "#{@trainer.email}.jpg"
+      imageData = params[:image]
+      File.binwrite("public/trainer_images/#{@trainer.image}", imageData.read)
+    end
+    if @trainer.save
+      flash[:notice] = "トレーナー登録情報を更新しました！"
+      redirect_to("/trainer/#{params[:id]}")
+    else
+      render("trainer/edit")
+    end
+  end
+
 
 end
