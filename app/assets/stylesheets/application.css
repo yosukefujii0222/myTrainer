@@ -79,6 +79,17 @@ a {
 }
 /* 新規登録ボックスここまで */
 
+/* ログインボックス */
+.login-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+/* ログインボックスここまで */
 
 /* ヘッダー部分のレイアウト */
 header{
@@ -104,7 +115,7 @@ header{
 
 }
 
-.header-right a{
+.header-right a, span{
   color: gray;
   font-size: 17px;
   line-height: 65px;
@@ -113,6 +124,11 @@ header{
 
 .header-right a:hover{
   color: black;
+}
+
+.header-right span:hover{
+  color: black;
+  cursor: pointer;
 }
 /* ヘッダー部分ここまで*/
 
