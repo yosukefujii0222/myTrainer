@@ -147,7 +147,6 @@ header{
 }
 
 .container{
-
   padding: 0 15px;
   text-align: center;
 }
@@ -313,4 +312,54 @@ footer{
   background-size: cover;
   height: 100%;
   padding: 40px 0;
+}
+
+/* -------------------トレーナー詳細ページ------------- */
+.trainer-page{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+}
+
+.trainer-description{
+  border-radius: 10px;
+  background-color: rgba(209, 232, 41, 0.8);
+  margin-top: 40px;
+  height: 820px;
+  padding: 40px 0;
+}
+
+.trainer-description-left{
+  width: 50%;
+  display: inline-block;
+  height: 100%;
+  background-color: black;
+  vertical-align: top;
+}
+
+.trainer-description-right{
+  width: 35%;
+  display: inline-block;
+  height: 100%;
+  background-color: white;
+  vertical-align: top;
+}
+
+.image-wrapper{
+  color: white;
+}
+
+.status-wrapper{
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  color: gray;
+}
+
+.status {
+  margin-top: 20px;
+}
+
+.status span {
+  font-size: 20px;
 }
