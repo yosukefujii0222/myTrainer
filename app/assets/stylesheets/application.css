@@ -347,6 +347,8 @@ footer{
 
 .image-wrapper{
   color: white;
+  height: 100%;
+  width: 100%;
 }
 
 .image-wrapper img{
@@ -365,6 +367,7 @@ footer{
 
 .status {
   margin-top: 20px;
+  margin-left: 10px;
 }
 
 .status span {
