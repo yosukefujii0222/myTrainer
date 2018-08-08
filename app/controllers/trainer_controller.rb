@@ -88,7 +88,7 @@ class TrainerController < ApplicationController
   end
 
   def search
-
+    @trainers = Trainer.all
   end
 
 end

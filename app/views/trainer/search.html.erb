@@ -6,19 +6,21 @@
       <span class="btn speciality-btn">筋トレ指導</span>
     </div>
     <div class="search-result-wrapper">
-      <div class="trainer-container">
-        <div class="trainer-container-left">
-          <p>ここに画像表示</p>
+      <% @trainers.each do |trainer| %>
+        <div class="trainer-container">
+          <div class="trainer-container-left">
+            <image src="<%= "/trainer_images/#{trainer.image}" %>">
+          </div>
+          <div class="trainer-container-right">
+            <p class="name"><%= trainer.name %></p>
+            <span class="l2 gender"><%= trainer.gender %></span>
+            <span class="l2 height">身長：<%= trainer.height %></span>
+            <span class="l2 weight">体重：<%= trainer.weight %></span>
+            <span class="l2 age">年齢：<%= trainer.age %></span>
+            <p class="l3 career"><%= trainer.career %></p>
+          </div>
         </div>
-        <div class="trainer-container-right">
-          <p class="name">名前</p>
-          <span class="l2 gender">男性</span>
-          <span class="l2 height">身長：</span>
-          <span class="l2 height">体重：</span>
-          <span class="l2 age">年齢：</span>
-          <p class="l3 career">筋肉留学経験あり</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
