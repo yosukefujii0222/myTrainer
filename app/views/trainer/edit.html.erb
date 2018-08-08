@@ -1,7 +1,7 @@
 <div class="trainer-new">
   <div class="container">
     <div class="register-form">
-      <h2>新規トレーナー登録</h2>
+      <h2>トレーナー登録情報の編集</h2>
 
       <!-- 登録失敗した時のエラーメッセージ -->
       <% @trainer.errors.full_messages.each do |message| %>
@@ -10,7 +10,7 @@
         </div>
       <% end %>
 
-      <%= form_tag("/trainer/create", {multipart: true}) do %>
+      <%= form_tag("/trainer/#{@trainer.id}/update", {multipart: true}) do %>
         <p>トレーナー名</p>
         <input name="name" value="<%= @trainer.name %>">
         <p>プロフィール画像</p>
@@ -40,10 +40,10 @@
           フォロワーとの引き合いを増やすために情報を入力しましょう。
         </p>
         <p>経歴</p>
-        <textarea name="career" value="<%= @trainer.career %>">あなたがこれまでトレーナーとして得た実績などを自由にアピールしてください。
+        <textarea name="career"><%= @trainer.career %>
         </textarea>
 
-        <input class="btn register" type="submit" value=新規登録>
+        <input class="btn register" type="submit" value=登録情報の編集>
       <% end %>
 
     </div>
