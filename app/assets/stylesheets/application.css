@@ -439,6 +439,7 @@ footer{
   padding: 10px 10px;
   text-align: left;
   margin: 10px 0;
+  display: block;
 }
 
 .trainer-container-left {
