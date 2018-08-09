@@ -87,5 +87,13 @@ class TrainerController < ApplicationController
     end
   end
 
+  def search
+    @trainers = Trainer.all
+    if params[:search].present?
+      @trainers = Trainer.search(params[:search])
+    elsif params[:searchSpeciality].present?
+      @trainers = Trainer.searchSpeciality(params[:searchSpeciality])
+    end
+  end
 
 end

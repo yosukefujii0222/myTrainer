@@ -7,4 +7,21 @@ class Trainer < ApplicationRecord
   validates :height, {presence: true}
   validates :weight, {presence: true}
   validates :age, {presence: true}
+
+  def self.search(search)
+    if search
+      Trainer.where(['name LIKE ?', "%#{search}%"]).or(Trainer.where(['career LIKE ?', "%#{search}%"]))
+    else
+      Trainer.all
+    end
+  end
+
+  def self.searchSpeciality(searchSpeciality)
+    if searchSpeciality
+      Trainer.where(speciality: "[\"#{searchSpeciality}\"]").or(Trainer.where(speciality: "[\"#{searchSpeciality}\", \"筋トレ指導\"]")).or(Trainer.where(speciality: "[\"食事管理\", \"#{searchSpeciality}\"]"))
+    else
+      Trainer.all
+    end
+  end
+
 end

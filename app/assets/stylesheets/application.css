@@ -347,6 +347,8 @@ footer{
 
 .image-wrapper{
   color: white;
+  height: 100%;
+  width: 100%;
 }
 
 .image-wrapper img{
@@ -365,6 +367,7 @@ footer{
 
 .status {
   margin-top: 20px;
+  margin-left: 10px;
 }
 
 .status span {
@@ -379,3 +382,109 @@ footer{
   font-weight: normal;
   margin-left: 20px;
 }
+
+/* 検索機能はここから */
+.trainer-search-page{
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+}
+
+.search-engine-wrapper{
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  margin-top: 40px;
+  padding: 20px 0;
+  width: 40%;
+  display: inline-block;
+}
+
+.search-engine-wrapper form{
+  display: inline-block;
+}
+
+
+.fas {
+  font-size: 15px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 40px;
+  padding: 12px 0;
+  background-color: #239b76;
+  opacity: 0.8;
+  border-radius: 0;
+}
+
+.search-engine-wrapper input{
+  height: 40px;
+  border: none;
+  box-sizing: border-box;
+}
+
+
+.speciality-btn {
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.search-result-wrapper {
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 30px;
+  display: inline-block;
+  width: 80%;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.trainer-container {
+  background-color: white;
+  padding: 10px 10px;
+  text-align: left;
+  margin: 10px 0;
+  display: block;
+}
+
+.trainer-container-left {
+  background-color: black;
+  display: inline-block;
+  height: 250px;
+  width: 220px;
+  vertical-align: middle;
+}
+
+.trainer-container-left img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.trainer-container-right {
+  display: inline-block;
+  vertical-align: top;
+  color: gray;
+  padding: 10px 10px;
+}
+
+.trainer-container-right .name {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.l2{
+  font-size: 30px;
+  margin: 30px 30px;
+}
+
+.trainer-container-right .career {
+  font-size: 15px;
+  margin-top: 20px;
+}
+/* 検索機能はここまで */
