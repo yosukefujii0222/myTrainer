@@ -18,7 +18,7 @@ class Trainer < ApplicationRecord
 
   def self.searchSpeciality(searchSpeciality)
     if searchSpeciality
-      Trainer.where(speciality: "[\"#{searchSpeciality}\"]").or(Trainer.where(speciality: "[\"#{searchSpeciality}\", \"workout\"]")).or(Trainer.where(speciality: "[\"meal\", \"#{searchSpeciality}\"]"))
+      Trainer.where(speciality: "[\"#{searchSpeciality}\"]").or(Trainer.where(speciality: "[\"#{searchSpeciality}\", \"筋トレ指導\"]")).or(Trainer.where(speciality: "[\"食事管理\", \"#{searchSpeciality}\"]"))
     else
       Trainer.all
     end
