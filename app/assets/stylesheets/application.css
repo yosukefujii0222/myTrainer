@@ -404,9 +404,6 @@ footer{
   display: inline-block;
 }
 
-.search-engine-wrapper .btn{
-  border-radius: 0;
-}
 
 .fas {
   font-size: 15px;
@@ -418,6 +415,7 @@ footer{
   padding: 12px 0;
   background-color: #239b76;
   opacity: 0.8;
+  border-radius: 0;
 }
 
 .search-engine-wrapper input{
@@ -432,6 +430,7 @@ footer{
   opacity: 0.8;
   margin-left: 20px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .search-result-wrapper {
