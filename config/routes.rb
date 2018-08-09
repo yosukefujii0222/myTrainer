@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   get 'trainer/:id' => 'trainer#show'
   get 'trainer/:id/edit' => 'trainer#edit'
   post 'trainer/:id/update' => 'trainer#update'
-
+  get 'trainer/:id/manage' => 'trainer#manage'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

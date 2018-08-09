@@ -96,4 +96,6 @@ class TrainerController < ApplicationController
     end
   end
 
+  def manage
+  end
 end
