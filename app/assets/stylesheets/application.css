@@ -400,7 +400,16 @@ footer{
   display: inline-block;
 }
 
-.fa-search{
+.search-engine-wrapper form{
+  display: inline-block;
+}
+
+.search-engine-wrapper .btn{
+  border-radius: 0;
+}
+
+.fas {
+  font-size: 15px;
   color: white;
   background-color: green;
   cursor: pointer;
@@ -416,6 +425,7 @@ footer{
   border: none;
   box-sizing: border-box;
 }
+
 
 .speciality-btn {
   background-color: #239b76;

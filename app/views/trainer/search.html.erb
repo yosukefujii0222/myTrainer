@@ -1,9 +1,12 @@
 <div class="trainer-search-page">
   <div class="container">
     <div class="search-engine-wrapper">
-      <input placeholder="キーワード入力"><p class="btn fa fa-search"></p>
-      <span class="btn speciality-btn">食事管理</span>
-      <span class="btn speciality-btn">筋トレ指導</span>
+      <%= form_tag("/trainer/search", {method: "get"}) do %>
+        <input name="search" placeholder="キーワード入力"><input type="submit" value="&#xf002;" class="btn fas">
+        <input name="searchSpeciality" type="submit" class="btn speciality-btn" value="meal">
+        <input name="searchSpeciality" type="submit" class="btn speciality-btn" value="workout">
+      <% end %>
+
     </div>
     <div class="search-result-wrapper">
       <% @trainers.each do |trainer| %>
