@@ -97,5 +97,7 @@ class TrainerController < ApplicationController
   end
 
   def manage
+    @applying = Follower.where(trainer_id: "#{params[:id]}", status: "1")
+    @approved = Follower.where(trainer_id: "#{params[:id]}", status: 2..3)
   end
 end

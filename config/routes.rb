@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get 'trainer/:id/manage' => 'trainer#manage'
 
   post "follower/:trainer_id/create" => "follower#create"
+  post "follower/:trainer_id/:user_id/approve" => "follower#approve"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
