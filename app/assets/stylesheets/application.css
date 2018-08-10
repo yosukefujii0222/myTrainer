@@ -392,6 +392,7 @@ footer{
   font-weight: normal;
   margin-left: 20px;
 }
+/* トレーナー詳細ページ */
 
 /* 検索機能はここから */
 .trainer-search-page{
@@ -590,6 +591,38 @@ footer{
   text-align: center;
   color: gray;
 }
-
-
 /* 管理ページここまで */
+
+/* ユーザーページここから */
+.user-manage-page {
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+  height: 900px;
+}
+
+.manage-notification-wrapper {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 22px;
+}
+
+.manage-notification-wrapper span {
+  padding: 0 30px;
+}
+
+.notification-container {
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
+
+.manage-notification-wrapper p {
+  margin-top: 10px;
+}
+
+
+
+/* ユーザーページここまで */

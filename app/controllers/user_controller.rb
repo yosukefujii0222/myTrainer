@@ -50,4 +50,13 @@ class UserController < ApplicationController
     redirect_to("/")
   end
 
+  def show
+    @user = User.find_by(params[:id])
+    @applying = Follower.where(user_id: "#{params[:id]}", status: 1)
+    @approved = Follower.where(user_id: "#{params[:id]}", status: 2)
+    @paid = Follower.where(user_id: "#{params[:id]}", status: 3)
+  end
+
+
+
 end

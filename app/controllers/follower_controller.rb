@@ -12,4 +12,12 @@ class FollowerController < ApplicationController
     @follower.save
     redirect_to("/trainer/#{params[:trainer_id]}/manage")
   end
+
+  def pay
+    @follower = Follower.find_by(user_id: params[:user_id], trainer_id: params[:trainer_id], status: 2)
+    @follower.status = 3
+    @follower.save
+    redirect_to("/user/#{params[:user_id]}")
+  end
+
 end

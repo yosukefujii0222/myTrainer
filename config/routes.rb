@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'user/userLogin' => 'user#userLogin'
   post 'userLogin' => 'user#login'
   post 'user/logout' => 'user#logout'
+  get 'user/:id' => 'user#show'
 
   get 'trainer/new' => 'trainer#new'
   post 'trainer/create' => 'trainer#create'
@@ -20,5 +21,7 @@ Rails.application.routes.draw do
 
   post "follower/:trainer_id/create" => "follower#create"
   post "follower/:trainer_id/:user_id/approve" => "follower#approve"
+  post "follower/:user_id/:trainer_id/pay" => "follower#pay"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

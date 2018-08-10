@@ -1,0 +1,28 @@
+<div class="user-manage-page">
+  <div class="container">
+    <div class="manage-notification-wrapper">
+      <div class="notification-container">
+        <span>未返信メッセージ：○件</span>
+        <span>/</span>
+        <span>契約トレーナー数：<%= @approved.length %>人</span>
+        <span>/</span>
+        <span>コンサルタント申請中：<%= @applying.length %>人</span>
+      </div>
+    </div>
+    <div class="manage-follower-wrapper">
+      <% @approved.each do |approve| %>
+        <div class="follower-container">
+          <div class="follower-info">
+            <span><%= approve.trainer.name %></span>
+          </div>
+          <div class="follower-status">
+            <%= form_tag("/follower/#{params[:id]}/#{approve.trainer_id}/pay") do %>
+              <input type="submit" class="btn speciality-btn" value="支払う">
+            <% end %>
+          </div>
+          <div class="clear"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
