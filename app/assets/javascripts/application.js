@@ -73,6 +73,10 @@ $(function(){
       var html = buildHTML(data);
       $('.chat-body-wrapper').append(html)
       $('.input-body').val('')
+      $('html, body').animate({
+        scrollTop: $(document).height()
+      }, 1500);
+      return false;
     })
     .fail(function(){
       alert('error');
@@ -111,14 +115,24 @@ $(function(){
       processData: false,
       contentType: false
     })
-
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-body-wrapper').append(html)
       $('.input-body').val('')
+      $('html, body').animate({
+        scrollTop: $(document).height()
+      }, 1500);
+      return false;
     })
     .fail(function(){
       alert('error');
     })
   })
 })
+
+$(function(){
+  var element = document.getElementById("chat_id");
+  var positionY = element.offsetTop;
+  element.scrollTo(0, positionY);
+})
+
