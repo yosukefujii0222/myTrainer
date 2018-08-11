@@ -1,0 +1,66 @@
+<div class="chat-room-page">
+  <div class="chat-notification-wrapper">
+    <div class="notification-container">
+      <h1><%= @follower.trainer.name %><span class="xros">×</span><%= @follower.user.name %></h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="clear"></div>
+    <div class="chat-body-wrapper">
+      <% if @chats.present? %>
+        <% @chats.each do |chat| %>
+
+          <!-- トレーナーの投稿 -->
+          <% if chat.sender == 1 %>
+            <div class="chat-body-left">
+              <div class="chat-body-container">
+                <div class="sender-info">
+                  <span><%= chat.trainer.name %></span>
+                  <span><%= chat.created_at.strftime('%Y/%m/%d %H:%M')  %></span>
+                </div>
+                <div class="chat-body">
+                  <span><%= chat.body %></span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          <!-- ユーザーの投稿 -->
+          <% elsif chat.sender == 2 %>
+            <div class="chat-body-right">
+              <div class="chat-body-container">
+                <div class="sender-info">
+                  <span><%= chat.user.name %></span>
+                  <span><%= chat.created_at.strftime('%Y/%m/%d %H:%M')  %></span>
+                </div>
+                <div class="chat-body">
+                  <span><%= chat.body %></span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          <% end %>
+          <div class="clear"></div>
+        <% end %>
+      <% else %>
+        <p>チャットの履歴が存在しません。<br />どんどん投稿しましょう。</p>
+      <% end %>
+    </div>
+    <div class="bottom-space"></div>
+  </div>
+  <div class="chat-form-wrapper">
+    <div class="form">
+      <!-- トレーナーだったら -->
+      <% if session[:trainer_id].present? %>
+        <%= form_tag("/chat/#{params[:room_id]}/1/create", method: :post) do %>
+          <input class="input-body" name="body"><input type="submit" class="btn post-btn" value="投稿">
+        <% end %>
+      <% end %>
+      <!-- フォロワーだったら -->
+      <% if session[:user_id].present? %>
+        <%= form_tag("/chat/#{params[:room_id]}/2/create", method: :post) do %>
+          <input class="input-body" name="body"><input type="submit" class="btn post-btn" value="投稿">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
