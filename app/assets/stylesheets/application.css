@@ -594,6 +594,21 @@ footer{
 /* 管理ページここまで */
 
 /* ユーザーページここから */
+.pay-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+
+.pay-price {
+  font-size: 35px;
+  color: rgb(209, 232, 41);
+}
+
 .user-manage-page {
   background-image: url('top-background.jpg');
   background-size: cover;
@@ -623,6 +638,12 @@ footer{
   margin-top: 10px;
 }
 
-
+.message-btn {
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
 /* ユーザーページここまで */
