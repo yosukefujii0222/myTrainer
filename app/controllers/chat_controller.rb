@@ -7,7 +7,10 @@ class ChatController < ApplicationController
   def trainerCreate
     @chat = Chat.new(sender: 1, body: params[:body], follower_id: params[:room_id])
     @chat.save
-    redirect_to("/chat/#{params[:room_id]}")
+    respond_to do |format|
+      format.html { redirect_to("/chat/#{params[:room_id]}") }
+      format.json
+    end
   end
 
   def userCreate
