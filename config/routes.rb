@@ -23,5 +23,8 @@ Rails.application.routes.draw do
   post "follower/:trainer_id/:user_id/approve" => "follower#approve"
   post "follower/:user_id/:trainer_id/pay" => "follower#pay"
 
+  get "chat/:room_id" => "chat#show"
+  post "chat/:room_id/1/create" => "chat#trainerCreate"
+  post "chat/:room_id/2/create" => "chat#userCreate"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
