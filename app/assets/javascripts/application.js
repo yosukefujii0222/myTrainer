@@ -79,3 +79,46 @@ $(function(){
     })
   })
 })
+
+$(function(){
+
+  function buildHTML(chat){
+    var html = `<div class="chat-body-right">
+                  <div class="chat-body-container">
+                    <div class="sender-info">
+                      <span>${chat.user}</span>
+                      <span>${chat.date}</span>
+                    </div>
+                    <div class="chat-body">
+                      <span>${chat.body}</span>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="clear"></div>`
+    return html;
+  }
+
+  $('#user_post').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.chat-body-wrapper').append(html)
+      $('.input-body').val('')
+    })
+    .fail(function(){
+      alert('error');
+    })
+  })
+})
