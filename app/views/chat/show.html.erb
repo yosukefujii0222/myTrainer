@@ -51,7 +51,7 @@
     <div class="form">
       <!-- トレーナーだったら -->
       <% if session[:trainer_id].present? %>
-        <%= form_tag("/chat/#{params[:room_id]}/1/create", method: :post) do %>
+        <%= form_tag("/chat/#{params[:room_id]}/1/create", method: :post, id: "trainer_post") do %>
           <input class="input-body" name="body"><input type="submit" class="btn post-btn" value="投稿">
         <% end %>
       <% end %>
