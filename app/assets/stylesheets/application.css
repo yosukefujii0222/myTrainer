@@ -17,6 +17,16 @@ li {
 a {
   text-decoration: none;
 }
+
+.hoge{
+    font-family: 'Font Awesome 5 Free';
+    content: '¥f02b';
+    content: '¥f1ed';
+}
+
+.clear {
+  clear: both;
+}
 /* CSSリセットここまで */
 
 /* フラッシュ */
@@ -382,6 +392,7 @@ footer{
   font-weight: normal;
   margin-left: 20px;
 }
+/* トレーナー詳細ページ */
 
 /* 検索機能はここから */
 .trainer-search-page{
@@ -488,3 +499,151 @@ footer{
   margin-top: 20px;
 }
 /* 検索機能はここまで */
+
+/* 管理ページここから */
+.trainer-manage-page {
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+  height: 900px;
+}
+
+.manage-notification-wrapper {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 22px;
+}
+
+.manage-notification-wrapper span {
+  padding: 0 30px;
+}
+
+.notification-container {
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
+
+.manage-notification-wrapper p {
+  margin-top: 10px;
+}
+
+.applying-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.apply-info, .apply-status, .apply-status form {
+  display: inline-block;
+}
+
+.apply-info {
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 15px;
+  float: left;
+}
+
+.apply-status {
+  float: right;
+  padding-right: 30px;
+}
+
+.manage-follower-wrapper {
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.follower-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 15px 0;
+}
+
+.follower-info {
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 15px;
+  float: left;
+}
+
+.follower-status {
+  float: right;
+  padding-right: 30px;
+}
+
+.follower-status span {
+  padding: 9px 5px;
+  margin-right: 4px;
+  background-color: white;
+  border: 1px solid gray;
+  width: 85px;
+  text-align: center;
+  color: gray;
+}
+/* 管理ページここまで */
+
+/* ユーザーページここから */
+.pay-modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+
+.pay-price {
+  font-size: 35px;
+  color: rgb(209, 232, 41);
+}
+
+.user-manage-page {
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+  height: 900px;
+}
+
+.manage-notification-wrapper {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 22px;
+}
+
+.manage-notification-wrapper span {
+  padding: 0 30px;
+}
+
+.notification-container {
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
+
+.manage-notification-wrapper p {
+  margin-top: 10px;
+}
+
+.message-btn {
+  background-color: #239b76;
+  opacity: 0.8;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* ユーザーページここまで */

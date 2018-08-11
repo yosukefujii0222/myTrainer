@@ -1,0 +1,61 @@
+<div class="user-manage-page">
+  <div class="container">
+    <div class="manage-notification-wrapper">
+      <div class="notification-container">
+        <span>未返信メッセージ：○件</span>
+        <span>/</span>
+        <span>契約トレーナー数：<%= @approved.length + @paid.length %>人</span>
+        <span>/</span>
+        <span>コンサルタント申請中：<%= @applying.length %>人</span>
+      </div>
+    </div>
+    <div class="manage-follower-wrapper">
+      <% @approved.each do |approve| %>
+        <!-- 支払い確認のモーダル -->
+        <div class="pay-modal" id="pay-modal">
+          <div class="modal">
+            <div class="close-modal">
+              <i class="fa fa-2x fa-times"></i>
+            </div>
+            <h2>お支払い</h2>
+            <span class="pay-price">500円</span>
+            <span><税込></span>
+            <p>下記の方法でお支払い可能です。</p>
+            <div class="modal-contents">
+              <p>PayPalでオンライン決済</p>
+              <div class="pay-method">
+                <%= form_tag("/follower/#{params[:id]}/#{approve.trainer_id}/pay", method: :post) do %>
+                  <input type="submit" class="btn speciality-btn" value="支払う">
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- モーダルここまで -->
+
+        <div class="follower-container">
+          <div class="follower-info">
+            <span><%= approve.trainer.name %></span>
+          </div>
+          <div class="follower-status">
+              <p id="pay-show" class="btn speciality-btn">支払う</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      <% end %>
+
+      <% @paid.each do |pay| %>
+        <div class="follower-container">
+          <div class="follower-info">
+            <span><%= pay.trainer.name %></span>
+          </div>
+          <div class="follower-status">
+            <a href="/" class="btn message-btn">チャットで相談</a>
+          </div>
+          <div class="clear"></div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -25,8 +25,13 @@ $(function() {
     $('#login-modal').fadeIn();
   })
 
+  $('#pay-show').click(function(){
+    $('#pay-modal').fadeIn();
+  })
+
   $('.close-modal').click(function(){
     $('#signup-modal').fadeOut();
     $('#login-modal').fadeOut();
+    $('#pay-modal').fadeOut();
   })
 })
