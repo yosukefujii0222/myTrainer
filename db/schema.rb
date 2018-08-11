@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811071016) do
+ActiveRecord::Schema.define(version: 20180811074338) do
 
   create_table "chats", force: :cascade do |t|
     t.text     "body"
     t.integer  "follower_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "sender"
   end
 
   create_table "followers", force: :cascade do |t|
