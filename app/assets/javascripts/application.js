@@ -38,9 +38,8 @@ $(function() {
 
 
 $(function(){
-
   function buildHTML(chat){
-    var html = `<div class="chat-body-left">
+    var html = `<div class="chat-body-left chats" data-id=${chat.id}>
                   <div class="chat-body-container">
                     <div class="sender-info">
                       <span>${chat.trainer}</span>
@@ -55,7 +54,6 @@ $(function(){
                 <div class="clear"></div>`
     return html;
   }
-
   $('#trainer_post').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -68,7 +66,6 @@ $(function(){
       processData: false,
       contentType: false
     })
-
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-body-wrapper').append(html)
@@ -87,7 +84,7 @@ $(function(){
 $(function(){
 
   function buildHTML(chat){
-    var html = `<div class="chat-body-right">
+    var html = `<div class="chat-body-right chats" data-id=${chat.id}>
                   <div class="chat-body-container">
                     <div class="sender-info">
                       <span>${chat.user}</span>
@@ -102,7 +99,6 @@ $(function(){
                 <div class="clear"></div>`
     return html;
   }
-
   $('#user_post').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -130,9 +126,74 @@ $(function(){
   })
 })
 
-$(function(){
-  var element = document.getElementById("chat_id");
-  var positionY = element.offsetTop;
-  element.scrollTo(0, positionY);
-})
 
+$(function() {
+
+  function update() {
+    if($('.chats')[0]){
+      var chat_id = $('.chats:last').data('id');
+    } else {
+      var chat_id = 0
+    }
+  }
+
+  function buildCHAT(chat) {
+    if(chat.sender == 1){
+      var chats = `<div class="chat-body-left chats" data-id=${chat.id}>
+                      <div class="chat-body-container">
+                        <div class="sender-info">
+                          <span>${chat.trainer}</span>
+                          <span>${chat.date}</span>
+                        </div>
+                        <div class="chat-body">
+                          <span>${chat.body}</span>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>`
+        return chats;
+    }else if(chat.sender == 2){
+      var chats = `<div class="chat-body-right chats" data-id=${chat.id}>
+                      <div class="chat-body-container">
+                        <div class="sender-info">
+                          <span>${chat.user}</span>
+                          <span>${chat.date}</span>
+                        </div>
+                        <div class="chat-body">
+                          <span>${chat.body}</span>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>`
+        return chats;
+    }
+  }
+
+  $(function(){
+    setInterval(update, 3000);
+  });
+
+  function update(){
+    var chat_id = $('.chats:last').data('id');
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data:{
+        chat: { id: chat_id }
+      },
+      dataType: 'json'
+    })
+    .always(function(data){
+      $.each(data, function(i, data){
+        var chats = buildCHAT(data);
+        $('.chat-body-wrapper').append(chats)
+        $('html, body').animate({
+          scrollTop: $(document).height()
+        }, 1500);
+        return false;
+      });
+    });
+  }
+});
