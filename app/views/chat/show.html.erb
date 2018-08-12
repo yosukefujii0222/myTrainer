@@ -12,7 +12,7 @@
 
           <!-- トレーナーの投稿 -->
           <% if chat.sender == 1 %>
-            <div class="chat-body-left">
+            <div class="chat-body-left chats" data-id=<%= chat.id %>>
               <div class="chat-body-container">
                 <div class="sender-info">
                   <span><%= chat.trainer.name %></span>
@@ -26,7 +26,7 @@
             </div>
           <!-- ユーザーの投稿 -->
           <% elsif chat.sender == 2 %>
-            <div class="chat-body-right">
+            <div class="chat-body-right chats" data-id=<%= chat.id %>>
               <div class="chat-body-container">
                 <div class="sender-info">
                   <span><%= chat.user.name %></span>
