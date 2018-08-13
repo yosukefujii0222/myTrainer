@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// require turbolinks
+// require_tree .
 
 $(function() {
 
@@ -35,7 +35,6 @@ $(function() {
     $('#pay-modal').fadeOut();
   })
 })
-
 
 $(function(){
   function buildHTML(chat){
