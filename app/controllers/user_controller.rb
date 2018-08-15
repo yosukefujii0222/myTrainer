@@ -1,6 +1,7 @@
 class UserController < ApplicationController
 
   before_action :authenticate_user,{only: [:logout, :show]}
+  before_action :forbid_login_user,{only: [:new, :create]}
 
   def new
     @user = User.new
