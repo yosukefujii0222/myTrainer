@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+
+  before_action :authenticate_user,{only: [:logout, :show]}
+
   def new
     @user = User.new
   end

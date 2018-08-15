@@ -1,4 +1,7 @@
 class ChatController < ApplicationController
+
+  before_action :authenticate_user,{only: [:show, :trainerCreate, :userCreate]}
+
   def show
     @chats = Chat.where(follower_id: params[:room_id])
     @follower = Follower.find_by(id: params[:room_id])

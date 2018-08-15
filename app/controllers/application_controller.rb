@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
       @current_user = Trainer.find_by(id: session[:trainer_id])
     end
   end
+
+  def authenticate_user
+    if @current_user == nil
+      flash[:notice] = "ログインが必要です"
+      redirect_to("/")
+    end
+  end
+
 end
