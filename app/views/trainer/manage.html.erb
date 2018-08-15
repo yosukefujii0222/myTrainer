@@ -34,11 +34,11 @@
           </div>
           <div class="follower-status">
             <% if approve.status == 2 %>
-              <span class="fa fa-envelope">未課金</span>
+              <span class="fa fa-envelope">支払い待ち</span>
             <% elsif approve.status == 3 %>
-              <span class="fa fa-envelope">契約中</span>
+              <span class="fa fa-money">契約中</span>
             <% end %>
-            <span class="fa fa-envelope">新着</span>
+            <span class="fa fa-envelope"><a href="<%= "/chat/#{approve.id}" %>">チャット</a></span>
             <span class="fa fa-envelope">○ヶ月</span>
           </div>
           <div class="clear"></div>
