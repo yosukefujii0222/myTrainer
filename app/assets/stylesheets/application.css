@@ -375,6 +375,11 @@ footer{
   color: gray;
 }
 
+.status-wrapper .false{
+  color: :gray;
+  background-color: gray;
+}
+
 .status {
   margin-top: 20px;
   margin-left: 10px;
@@ -589,11 +594,14 @@ footer{
   border: 1px solid gray;
   width: 85px;
   text-align: center;
+}
+
+.follower-status .false {
   color: gray;
 }
 
 .follower-status a {
-  color: gray;
+  color: white;
 }
 
 .follower-status .true {
@@ -653,6 +661,7 @@ footer{
   cursor: pointer;
   font-size: 15px;
 }
+
 
 /* ユーザーページここまで */
 
