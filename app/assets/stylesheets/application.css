@@ -647,3 +647,104 @@ footer{
 }
 
 /* ユーザーページここまで */
+
+/* チャットページここから */
+.chat-room-page {
+  background-image: url('top-background.jpg');
+  background-size: cover;
+  padding: 65px 0;
+}
+
+.chat-room-page .container {
+  padding: none;
+}
+
+.xros {
+  color: green;
+  font-size: 50px;
+}
+.chat-room-page .container {
+  padding: 0 30px;
+}
+
+.chat-notification-wrapper {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  z-index: 10;
+  line-height: 100px;
+  text-align: center;
+}
+
+.chat-notification-wrapper .notification-container {
+  border-bottom: none;
+}
+
+.chat-room-page .clear {
+  padding-top: 165px;
+}
+
+.chat-body-wrapper {
+  padding: 0 200px;
+}
+
+.chat-body-wrapper .clear {
+  padding-top: 20px;
+}
+
+.chat-body-left {
+  float: left;
+  background-color: rgba(209, 232, 41, 0.7);
+  display: inline-block;
+}
+
+.chat-body-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+}
+.chat-body-left .clear, .chat-body-right .clear {
+  padding: 0;
+}
+
+.bottom-space {
+  bottom: 0;
+  padding-bottom: 120px;
+}
+
+.chat-form-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding: 40px 0 40px 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.chat-body-container {
+  padding: 10px 30px;
+}
+
+.post-btn {
+  font-size: 15px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 60px;
+  padding: 8px;
+  background-color: #239b76;
+  opacity: 0.8;
+  border-radius: 0;
+
+}
+
+.input-body {
+  width: 40%;
+  height: 40px;
+  border: none;
+  box-sizing: border-box;
+}
+/* チャットページここまで */
