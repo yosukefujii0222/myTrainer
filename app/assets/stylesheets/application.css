@@ -114,7 +114,7 @@ header{
   float: left;
 }
 
-.header-left p{
+.header-left a{
   color: black;
   font-size: 25px;
   line-height: 65px;
