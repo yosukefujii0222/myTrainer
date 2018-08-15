@@ -14,19 +14,20 @@
   <header>
     <div class="container">
       <div class="header-left">
-        <p>マイトレ</p>
+        <a href="/">マイトレ</a>
       </div>
       <div class="header-right">
         <!-- トレーナーログイン時 -->
         <% if session[:trainer_id] %>
-          <%= link_to(@current_user.name, "/")%>
+          <%= link_to(@current_user.name, "/trainer/#{@current_user.id}")%>
+          <%= link_to("フォロワー管理", "/trainer/#{@current_user.id}/manage")%>
           <%= link_to("他のトレーナーを検索", "/trainer/search") %>
-          <%= link_to("ログアウト", "trainer/logout", method: "post") %>
+          <%= link_to("ログアウト", "/trainer/logout", method: "post") %>
         <!-- ユーザーログイン時 -->
         <% elsif session[:user_id] %>
-          <%= link_to(@current_user.name, "/")%>
+          <%= link_to(@current_user.name, "/user/#{@current_user.id}")%>
           <%= link_to("トレーナーを検索", "/trainer/search") %>
-          <%= link_to("ログアウト", "user/logout", method: "post") %>
+          <%= link_to("ログアウト", "/user/logout", method: "post") %>
         <!-- ログインしていない状態 -->
         <% else %>
           <%= link_to("トレーナーを検索", "/trainer/search") %>
@@ -82,6 +83,5 @@
     </div>
 
     <%= yield %>
-    <script src="application.js"></script>
   </body>
 </html>

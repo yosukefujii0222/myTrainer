@@ -1,4 +1,8 @@
 class TrainerController < ApplicationController
+
+  before_action :authenticate_user,{only: [:logout, :show, :edit, :update, :manage]}
+  before_action :forbid_login_user,{only: [:new, :create]}
+
   def new
     @trainer = Trainer.new
   end

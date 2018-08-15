@@ -10,52 +10,56 @@
       </div>
     </div>
     <div class="manage-follower-wrapper">
-      <% @approved.each do |approve| %>
-        <!-- 支払い確認のモーダル -->
-        <div class="pay-modal" id="pay-modal">
-          <div class="modal">
-            <div class="close-modal">
-              <i class="fa fa-2x fa-times"></i>
-            </div>
-            <h2>お支払い</h2>
-            <span class="pay-price">500円</span>
-            <span><税込></span>
-            <p>下記の方法でお支払い可能です。</p>
-            <div class="modal-contents">
-              <p>PayPalでオンライン決済</p>
-              <div class="pay-method">
-                <%= form_tag("/follower/#{params[:id]}/#{approve.trainer_id}/pay", method: :post) do %>
-                  <input type="submit" class="btn speciality-btn" value="支払う">
-                <% end %>
+      <% if @approved.present? %>
+
+        <% @approved.each do |approve| %>
+          <!-- 支払い確認のモーダル -->
+          <div class="pay-modal" id="pay-modal">
+            <div class="modal">
+              <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+              </div>
+              <h2>お支払い</h2>
+              <span class="pay-price">500円</span>
+              <span><税込></span>
+              <p>下記の方法でお支払い可能です。</p>
+              <div class="modal-contents">
+                <p>PayPalでオンライン決済</p>
+                <div class="pay-method">
+                  <%= form_tag("/follower/#{params[:id]}/#{approve.trainer_id}/pay", method: :post) do %>
+                    <input type="submit" class="btn speciality-btn" value="支払う">
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- モーダルここまで -->
+          <!-- モーダルここまで -->
 
-        <div class="follower-container">
-          <div class="follower-info">
-            <span><%= approve.trainer.name %></span>
+          <div class="follower-container">
+            <div class="follower-info">
+              <span><%= approve.trainer.name %></span>
+            </div>
+            <div class="follower-status">
+                <p id="pay-show" class="btn speciality-btn">支払う</p>
+            </div>
+            <div class="clear"></div>
           </div>
-          <div class="follower-status">
-              <p id="pay-show" class="btn speciality-btn">支払う</p>
+        <% end %>
+
+        <% @paid.each do |pay| %>
+          <div class="follower-container">
+            <div class="follower-info">
+              <span><%= pay.trainer.name %></span>
+            </div>
+            <div class="follower-status">
+              <a href="<%= "/chat/#{pay.id}" %>" class="btn message-btn">チャットで相談</a>
+            </div>
+            <div class="clear"></div>
           </div>
-          <div class="clear"></div>
-        </div>
+        <% end %>
+      <% else %>
+        <p>トレーナーへの申し込みが承認されると下記に表示されます。<br />まずはトレーナーを検索して、コンサルタント契約を申し込みましょう。</p>
       <% end %>
-
-      <% @paid.each do |pay| %>
-        <div class="follower-container">
-          <div class="follower-info">
-            <span><%= pay.trainer.name %></span>
-          </div>
-          <div class="follower-status">
-            <a href="/" class="btn message-btn">チャットで相談</a>
-          </div>
-          <div class="clear"></div>
-        </div>
-      <% end %>
-
     </div>
   </div>
 </div>

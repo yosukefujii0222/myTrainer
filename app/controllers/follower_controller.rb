@@ -1,5 +1,7 @@
 class FollowerController < ApplicationController
 
+  before_action :authenticate_user,{only: [:create, :approve, :pay]}
+
   def create
     @follower = Follower.new(trainer_id: params[:trainer_id], user_id: @current_user.id, status: 1)
     @follower.save
