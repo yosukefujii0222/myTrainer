@@ -13,15 +13,20 @@
       </div>
       <div class="trainer-description-right">
         <div class="status-wrapper">
-          <a href="/trainer/<%= @trainer.id %>/edit" class="btn show-page-btn">編集する</a>
-
-          <% if Follower.find_by(user_id: @current_user.id, trainer_id: @trainer.id) %>
-            <span>申し込み</span>
-          <% else %>
-            <%= link_to("申し込む", "/follower/#{@trainer.id}/create", {method: "post"})%>
+          <% if session[:trainer_id] %>
+            <% if @current_user.id == @trainer.id %>
+              <a href="/trainer/<%= @trainer.id %>/edit" class="btn show-page-btn">編集する</a>
+            <% end %>
           <% end %>
 
-          <p class="btn show-page-btn">申し込む</p>
+          <% if session[:user_id] %>
+            <% if Follower.find_by(user_id: @current_user.id, trainer_id: @trainer.id) %>
+              <span class="btn show-page-btn false">申込済み</span>
+            <% else %>
+              <p class="btn show-page-btn"><%= link_to("申し込む", "/follower/#{@trainer.id}/create", {method: "post"})%></p>
+            <% end %>
+          <% end %>
+
           <div class="status name">
             <span>名前：</span><%= @trainer.name %>
           </div>
