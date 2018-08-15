@@ -591,6 +591,14 @@ footer{
   text-align: center;
   color: gray;
 }
+
+.follower-status a {
+  color: gray;
+}
+
+.follower-status .true {
+  color: rgb(209, 232, 41);
+}
 /* 管理ページここまで */
 
 /* ユーザーページここから */
