@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
-// require_tree .
+//= require_tree .
+
 
 $(function() {
 
@@ -171,7 +172,7 @@ $(function() {
   }
 
   $(function(){
-    setInterval(update, 3000);
+    var interval = setInterval(update, 3000);
   });
 
   function update(){
