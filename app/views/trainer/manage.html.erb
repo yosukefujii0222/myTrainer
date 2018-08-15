@@ -13,16 +13,19 @@
       <% end %>
       <div class="applying-container">
         <% @applying.each do |apply| %>
-          <div class="apply-info">
-            <span><%= apply.user.name %></span>
-            <span>理想体重：<%= apply.user.idealWeight %>kg</span>
+          <div class="apply">
+            <div class="apply-info">
+              <span><%= apply.user.name %></span>
+              <span>理想体重：<%= apply.user.idealWeight %>kg</span>
+            </div>
+            <div class="apply-status">
+              <%= form_tag("/follower/#{params[:id]}/#{apply.user_id}/approve") do %>
+                <input type="submit" class="btn speciality-btn" value="承諾する">
+              <% end %>
+            </div>
+            <div class="clear"></div>
           </div>
-          <div class="apply-status">
-            <%= form_tag("/follower/#{params[:id]}/#{apply.user_id}/approve") do %>
-              <input type="submit" class="btn speciality-btn" value="承諾する">
-            <% end %>
-          </div>
-          <div class="clear"></div>
+
         <% end %>
       </div>
     </div>
@@ -34,7 +37,7 @@
           </div>
           <div class="follower-status">
             <% if approve.status == 2 %>
-              <span class="fa fa-envelope false">支払い待ち</span>
+              <span class="fa fa-envelope false">未払い</span>
             <% elsif approve.status == 3 %>
               <span class="fa fa-envelope true">契約中</span>
             <% end %>
