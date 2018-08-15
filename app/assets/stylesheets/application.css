@@ -231,6 +231,11 @@ header{
   padding: 10px 10px;
 }
 
+.gif-movie {
+  width: 70%;
+
+}
+
 .message{
 }
 
@@ -514,9 +519,8 @@ footer{
 }
 
 .manage-notification-wrapper {
-  border: 1px solid black;
   border-radius: 10px;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.8);
   margin-top: 40px;
   padding: 20px;
   font-size: 22px;
@@ -539,7 +543,6 @@ footer{
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px 0;
   border-radius: 5px;
-  border: 1px solid black;
   margin-top: 10px;
 }
 
@@ -560,18 +563,16 @@ footer{
 }
 
 .manage-follower-wrapper {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.8);
   border-radius: 10px;
   margin-top: 30px;
   padding: 20px;
-  border: 1px solid black;
 }
 
 .follower-container {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px 0;
   border-radius: 5px;
-  border: 1px solid black;
   margin: 15px 0;
 }
 
@@ -633,9 +634,8 @@ footer{
 }
 
 .manage-notification-wrapper {
-  border: 1px solid black;
   border-radius: 10px;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.8);
   margin-top: 40px;
   padding: 20px;
   font-size: 22px;
